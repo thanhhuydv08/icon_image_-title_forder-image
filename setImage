@@ -1,0 +1,6 @@
+JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(getClass().getResource("/image/bg_login.jpg")));
+    // voi image nam trong src cua project
+    
+  Image icon = Toolkit.getDefaultToolkit().getImage("perfume.png");
+  // bat buoc file image nam trong project ngoai src moi chay
