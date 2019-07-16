@@ -1,0 +1,17 @@
+				JFileChooser chooser = new JFileChooser();
+				int result = chooser.showOpenDialog(frame);
+				if(result==JFileChooser.APPROVE_OPTION) {
+					txtPicture.setText(chooser.getSelectedFile().getPath());
+					Path sourceDirectory = Paths.get(chooser.getSelectedFile().getPath());
+					Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
+					Path targetDirectory = Paths.get(root.toString(),"src", "image",chooser.getSelectedFile().getName());
+			        //copy source to target using Files Class
+			        try {
+						Files.copy(sourceDirectory, targetDirectory);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					lbPreviewPicture.setIcon(new ImageIcon(chooser.getSelectedFile().getPath()));
+				}
+			}
